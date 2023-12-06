@@ -58,9 +58,36 @@ app.get("/",ingredientsRoutes.root);
 
 
 
+//Scan Routes
+app.get("/scan",ingredientsRoutes.scan);
 
 
 
+
+//list of recipes Routes (dishList)
+app.get("/recipes",ingredientsRoutes.recipes);
+
+
+
+
+//chosen recipe Routes
+app.get("/recipes/:id",ingredientsRoutes.makeFood);
+
+
+
+
+//finished meal Routes
+app.get("/meal",ingredientsRoutes.showFood);
+
+
+
+
+//learderboard Routes
+app.get("/learderboard",ingredientsRoutes.getLearderboard);
+
+
+
+///port
 let PORT = process.env.PORT || 3006;
 
 app.listen(PORT, function(){

@@ -1,59 +1,64 @@
-<div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
-<div id="webcam-container"></div>
-<div id="label-container"></div>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-<script type="text/javascript">
-    // More API functions here:
-    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/637f4ab425.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="home-body">
+    <header class="p-0 m-0 container-fluid fixed-top">
+    <nav class="navbar  fixed-top  navbar-expand-sm p-0 justify-content-space-between ">
+      <div class="container-fluid">
+        <div class=" navbar-text  ms-2 navbar-brand h1">FOOD<span>SCAN</span></div>
+        {{!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navNavbar"
+          aria-controls="navNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button> --}}
+{{!-- collapse navbar-collapse --}}
+        <div class=" justify-content-end" id="navNavbar">
 
-    // the link to your model provided by Teachable Machine export panel
-    const URL = "./my_model/";
+          <ul class="navbar-nav ">
+            <li class="nav-item mx-3 ">
+              <a class="nav-link  logoutElem" href="/login"onclick="closeNavbar()">
+                <i  class="bi bi-person-circle">{{currentUser}}</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-    let model, webcam, labelContainer, maxPredictions;
+    </nav>
+  </header>
+  <main class="main mt-5 container-fluid">
+    <h1 >LET’S GET STARTED COOKING AMAZING SECRET DISHES</h1>
+    <img class="my-2" src="/images/delicious-food-1e06c0194f14f38396eb4ab1e3094aeb 1.png" alt="">
+    <p>take a picture of your food, item we’ll tell you what it is, then begin your amazing cooking challenge</p>
+    <button class="home-button">GET STARTED</button>
+  </main>
 
-    // Load the image model and setup the webcam
-    async function init() {
-        const modelURL = URL + "model.json";
-        const metadataURL = URL + "metadata.json";
-
-        // load the model and metadata
-        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-        // or files from your local hard drive
-        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
-        model = await tmImage.load(modelURL, metadataURL);
-        maxPredictions = model.getTotalClasses();
-
-        // Convenience function to setup a webcam
-        const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
-        await webcam.play();
-        window.requestAnimationFrame(loop);
-
-        // append elements to the DOM
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
+  
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+  function closeNavbar() {
+    var navNavbar = document.getElementById('navNavbar');
+    var bootstrapButton = document.querySelector('.navbar-toggler');
+    if (navNavbar.classList.contains('show')) {
+      bootstrapButton.click(); // Click the button to close the Navbar
     }
-
-    async function loop() {
-        webcam.update(); // update the webcam frame
-        await predict();
-        window.requestAnimationFrame(loop);
+  }
+  function closeSearchbar() {
+    var navNavbar = document.getElementById('mynavbar');
+    var bootstrapButton = document.querySelector('.search-toggler');
+    if (navNavbar.classList.contains('show')) {
+      bootstrapButton.click(); // Click the button to close the search
     }
-
-    // run the webcam image through the image model
-    async function predict() {
-        // predict can take in an image, video or canvas html element
-        const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
-    }
+  }
 </script>
+</html>
+</html>

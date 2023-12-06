@@ -2,12 +2,73 @@ export default function IngredientsRoutes(ingredientsService) {
 
     //get the home page
     function root(req, res) {
-      res.render('Home');
+      res.render('home',{
+        currentUser:""
+      });
     }
-  
+
+
+
+
+    
+    function scan(req, res){
+      res.render('scan',{
+        currentUser:""
+      });
+    }
+
+
+
+
+
+    function recipes(req, res){
+      res.render('dishList',{
+        currentUser:""
+      });
+    }
+
+
+
+
+
+    function makeFood(req, res){
+      res.render('recipe',{
+        currentUser:""
+      });
+    }
+
+
+
+
+
+
+    function showFood(req, res){
+      res.render('finishedMeal',{
+        currentUser:""
+      });
+    }
+
+
+
+
+
+
+
+    function getLearderboard(req, res){
+      res.render('learderboard',{
+        currentUser:""
+      });
+    }
+    
+ 
     
   
     return {
-      root
+      root,
+      scan,
+      recipes,
+      makeFood,
+      showFood,
+      getLearderboard
   }
 }
