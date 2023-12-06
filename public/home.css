@@ -4,17 +4,17 @@
 /* start of home section */
 
 header {
-    background-color: rgba(126, 124, 124, 1);
+    background-color: rgba(126, 124, 124, 0.55);
     color: #000000;
 }
 
 header nav {
-    background-color: rgba(126, 124, 124, 1);
+    background-color: rgba(126, 124, 124, 0.55);
     color: #000000;
 }
 
 .home-body {
-    background-color: rgba(212, 212, 212, 1);
+    background-color: #D4D4D4;
 }
 
 .navbar-brand {
@@ -75,6 +75,7 @@ main{
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    padding: 0px 5px;
 }
 .largeIMG{
     display: none;
@@ -136,7 +137,7 @@ main{
     .friendsparagraph h2{
         width: 300px;
         padding: 4px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 }
 @media(min-width:960px){
@@ -163,7 +164,6 @@ main{
         font-size: 1.6rem;
         width: 300px;
         padding: 4px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
     }
 }
 @media(min-width:1200px){
