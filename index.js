@@ -77,7 +77,7 @@ app.get("/recipes/:id",ingredientsRoutes.makeFood);
 
 
 //finished meal Routes
-app.get("/meal",ingredientsRoutes.showFood);
+app.get("/finishedMeal",ingredientsRoutes.showFood);
 
 
 
