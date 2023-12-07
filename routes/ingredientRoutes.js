@@ -22,7 +22,7 @@ export default function IngredientsRoutes(ingredientsService) {
 
 
     function recipes(req, res){
-      res.render('dishList',{
+      res.render('recipe',{
         currentUser:""
       });
     }
@@ -39,7 +39,11 @@ export default function IngredientsRoutes(ingredientsService) {
 
 
 
-
+    function dishList(req,res){
+      res.render('dishList',{
+        currentUser:""
+      })
+    }
 
 
     function showFood(req, res){
@@ -69,6 +73,7 @@ export default function IngredientsRoutes(ingredientsService) {
       recipes,
       makeFood,
       showFood,
-      getLearderboard
+      getLearderboard,
+      dishList
   }
 }
