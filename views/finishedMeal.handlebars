@@ -17,8 +17,12 @@
 .image {
   display: none;
   margin: 0 auto;
-  height: 200px;
+  height: 300px;
   width: 300px;
+}
+#imageUpload{
+  display: block;
+  margin: 0 auto;
 }
 </style>
 
@@ -52,7 +56,7 @@
       <h3 class="scan-secondary-heading show_dish">Show us your dish</h3>
       <!-- ********************** webcam for the model **************************** -->
       {{!-- <div id="webcam-container"></div> --}}
-      <img id="imagePreview" style="height: 300px;" />
+      <img id="imagePreview" class="image" />
 	  <input id="imageUpload" type="file" />
       <div id="label-container"></div>
       <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
@@ -63,7 +67,7 @@
         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
         // the link to your model provided by Teachable Machine export panel
-        const URL = "https://teachablemachine.withgoogle.com/models/K4TAnqUWm/";
+        const URL = "https://teachablemachine.withgoogle.com/models/mHd7RAwPO/";
 
       
 			let model, labelContainer, maxPredictions;
@@ -84,7 +88,7 @@
 				}
 			}
             async function predict() {
-                scannedProbability = 0.99
+            scannedProbability = 0.99
 				// predict can take in an image, video or canvas html element
 				var image = document.getElementById('imagePreview');
 				const prediction = await model.predict(image, false);
@@ -93,7 +97,7 @@
 						prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
 					labelContainer.childNodes[i].innerHTML = classPrediction;
                if(prediction[i].probability >= scannedProbability){
-                document.getElementById("webcam-container").style.display = 'none';
+                document.getElementById("imageUpload").style.display = 'none';
                 document.getElementById("label-container").style.display = 'none';
                 document.getElementById("button").style.display = 'none';
                 document.querySelector('.scan.igredient-text').innerHTML = "Harissa roasted carrots, Well done you've earned 48 points!";
