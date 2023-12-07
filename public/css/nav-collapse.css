@@ -1,14 +1,3 @@
-
-html {
-  overflow-x: hidden;
-}
-
-.active{
-  color: var(--main-color) !important;
-}
-.scan.container {
-  padding-inline: 20px;
-}
 /* header */
 .header {
   display: flex;
@@ -48,32 +37,6 @@ html {
 }
 .logo-span {
   color: var(--main-color);
-}
-.scan-secondary-heading {
-  font-size: 1.2rem;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-.scan-secondary-heading,
-.scan.text-link-wrapper,
-#webcam-container,
-#label-container {
-  text-align: center;
-}
-.scan.start-btn {
-  width: 100%;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 5px;
-  color: var(--btn-color-text);
-  background-color: var(--main-color);
-  margin-block-end: 15px;
-}
-.scan.igredient-text {
-  margin-block-end: 15px;
 }
 a:link.scan {
   color: var(--main-color);
@@ -138,10 +101,6 @@ a:link.scan {
 .btn-mobile-nav.bx {
   font-size: 2rem;
 }
-#label-container,.scan-secondary-heading{
-  margin-bottom:15px;
-}
-
 .user{
   display:flex;
   gap:12px;
@@ -149,13 +108,7 @@ a:link.scan {
 .user-desktop{
   display:none;
 }
-
-/* ----------------- MOBILE FIRST  -----------------*/
 @media(min-width:768px){
-  .scan.container{
-    max-width:400px;
-    margin:0 auto;
-  }
   .header{
     margin-bottom: 15px;
     padding-inline:20px;
@@ -188,18 +141,4 @@ a:link.scan {
     gap:1.2rem;
     
   }
-  .start-btn-wrapper{
-    text-align:center;
-  }
-  .scan.start-btn {
-    width: revert;
-    padding: 10px 20px;
-    font-size: 1rem;
-  }
-}
-@media(min-width:1024px){
-  .scan.container{
-    max-width:1200px;
-    margin:0 auto;
-    }
 }

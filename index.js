@@ -70,8 +70,17 @@ app.get("/recipes",ingredientsRoutes.recipes);
 
 
 
+
+//list of recipes Routes (dishList)
+app.get("/dishList",ingredientsRoutes.dishList);
+
+
+
+
+
 //chosen recipe Routes
 app.get("/recipes/:id",ingredientsRoutes.makeFood);
+
 
 
 
@@ -82,8 +91,10 @@ app.get("/finishedMeal",ingredientsRoutes.showFood);
 
 
 
+
 //learderboard Routes
 app.get("/learderboard",ingredientsRoutes.getLearderboard);
+
 
 
 

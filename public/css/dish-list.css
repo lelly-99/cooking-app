@@ -1,0 +1,33 @@
+.dish.container{
+  padding-inline:18px;
+}
+.dish-tertiary-heading{
+  margin-bottom:15px;
+  font-size:1.2rem;
+  font-weight:300;
+  text-transform: uppercase;  
+}
+.dish.img-meal{
+  width:130px;
+  height:130px;
+}
+.dish-wrapper{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, auto));
+  place-items: center;
+}
+.dish p, .dish-tertiary-heading{
+  text-align: center;
+}
+@media(min-width:768px){
+  .dish.container{
+    max-width: 1200px;
+    margin:0 auto;
+  }
+  .dish-wrapper{
+    grid-template-columns: repeat(auto-fit, minmax(450px, auto));
+  }
+  .meal{
+    margin-block-end:15px;
+  }
+}

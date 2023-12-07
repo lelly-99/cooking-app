@@ -110,7 +110,6 @@ nav{
 
 .user-stats{
     display: flex;
-    margin-top: -50px;
     gap: 70px;
 }
 
