@@ -9,6 +9,8 @@ import dotenv from 'dotenv'
 import cookieParser from "cookie-parser"
 import IngredientsService from "./service/ingredients.js";
 import IngredientsRoutes from "./routes/ingredientRoutes.js";
+import AuthRoutes from "./routes/authRoutes.js";
+import AuthService from "./service/authService.js";
 dotenv.config();
 
 const app = express();
@@ -49,6 +51,13 @@ app.use(cookieParser());
 
 const ingredientsService = IngredientsService(db);
 const ingredientsRoutes = IngredientsRoutes(ingredientsService)
+
+const authService = AuthService(db);
+const authRoutes = AuthRoutes(authService ,bcrypt);
+
+//authRoutes
+app.get('/login', authRoutes.loginRoute);
+app.get('/register', authRoutes.registerRoute)
 
 
 
