@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Link icons -->
+  <!-- Link Icons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <!-- Link Dom -->
   <script src="/dom/nav-collapse.js" defer></script>
@@ -24,9 +24,9 @@
     </a>
     <nav class="main-nav">
       <ul class="main-nav-list">
-        <li><a class="main-nav-link" href="#">Home</a></li>
+        <li><a class="main-nav-link" href="/">Home</a></li>
         <li><a class="main-nav-link" href="#">Contact</a></li>
-        <li><a class="main-nav-link active" href="#">Scan</a></li>
+        <li><a class="main-nav-link active" href="/scan">Scan</a></li>
         <div class="user user-mobile">
           <li><a class="main-nav-link" href="#"><i class='bx bx-user'></i></a></li>
           <li><a class="main-nav-link" href="#">User</a></li>
@@ -46,22 +46,14 @@
     <div class="dish container">
       <h3 class="dish-tertiary-heading">Select One Dish You'd Like To Try</h3>
       <div class="dish-wrapper">
-        <div class="meal meal-1">
-          <img class="dish img-meal img-meal-1" src="/images/meal-1.jpeg" alt="">
-          <p>Harrisa Roasted Carrots </p>
-        </div>
-        <div class="meal meal-2">
-          <img class="dish img-meal img-meal-2" src="/images/meal-2.jpeg" alt="">
-          <p>Harrisa Roasted Carrots </p>
-        </div>
-        <div class="meal meal-3">
-          <img class="dish img-meal img-meal-3" src="/images/meal-3.jpeg" alt="">
-          <p>Harrisa Roasted Carrots </p>
-        </div>
-        <div class="meal meal-4">
-          <img class="dish img-meal img-meal-4" src="/images/meal-4.jpeg" alt="">
-          <p>Harrisa Roasted Carrots </p>
-        </div>
+        {{#each dishes.data}}
+        <a href="/recipes/{{this.dish_name}}" class="dish a">
+          <div class="meal meal-{{this.dish_id}}">
+            <img class="dish img-meal img-meal-2" src="{{this.dish_image}}" alt="">
+            <p>{{this.dish_name}} <span class="score-span">With {{this.dish_points}} Points</span></p>
+          </div>
+        </a>
+        {{/each}}
       </div>
     </div>
   </main>

@@ -16,7 +16,10 @@
   list-style: none;
   text-decoration: none;
 }
-
+a{
+  text-decoration:none;
+  color:inherit;
+}
 h1,
 h2,
 h3,

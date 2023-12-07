@@ -9,6 +9,7 @@ import dotenv from 'dotenv'
 import cookieParser from "cookie-parser"
 import IngredientsService from "./service/ingredients.js";
 import IngredientsRoutes from "./routes/ingredientRoutes.js";
+
 dotenv.config();
 
 const app = express();

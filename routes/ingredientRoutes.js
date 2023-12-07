@@ -1,3 +1,4 @@
+import axios from "axios";
 export default function IngredientsRoutes(ingredientsService) {
 
     //get the home page
@@ -39,8 +40,11 @@ export default function IngredientsRoutes(ingredientsService) {
 
 
 
-    function dishList(req,res){
+    async function dishList(req,res){
+      let dishes = await axios.get("https://recipes-api-8b36.onrender.com/api/dishes/")
+      let dishesData = dishes.data
       res.render('dishList',{
+        dishes:dishesData,
         currentUser:""
       })
     }
