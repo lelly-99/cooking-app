@@ -23,14 +23,14 @@ export default function IngredientsRoutes(ingredientsService) {
 
 
     async function recipes(req, res){
-      let recipeFor = req.params.recipe_dish_name;
-      let recipeData = await axios.get(`https://recipes-api-8b36.onrender.com/api/recipe/${recipeFor}`)
-      recipeData=recipeData.data
-      console.log(recipeData)
-      res.render('dishList',{
-        recipe: recipeData,
-        currentUser:""
-      });
+      // let recipeFor = req.params.recipe_dish_name;
+      // let recipeData = await axios.get(`https://recipes-api-8b36.onrender.com/api/recipe/${recipeFor}`)
+      // recipeData=recipeData.data.data
+      // console.log(recipeData)
+      // res.render('recipe',{
+      //   recipe: recipeData,
+      //   currentUser:""
+      // });
     }
 
 
@@ -39,8 +39,9 @@ export default function IngredientsRoutes(ingredientsService) {
 
     async function makeFood(req, res){
       let id = req.params.id;
+      
       let recipeData = await axios.get(`https://recipes-api-8b36.onrender.com/api/recipes/${id}`)
-      console.log(recipeData);
+      console.log(recipeData.data.data);
       res.render('recipe',{
         recipe: recipeData,
         currentUser:""

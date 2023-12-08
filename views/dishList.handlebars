@@ -48,7 +48,7 @@
         <h3 class="dish-tertiary-heading">Select One Dish You'd Like To Try</h3>
         <div class="dish-wrapper">
           {{#each dishes.data}}
-          <a href="/recipes/{{this.id}}" class="dish a">
+          <a href="/recipes/{{this.dish_id}}" class="dish a">
             <div class="meal meal-{{this.dish_id}}">
               <img class="dish img-meal img-meal-2" src="{{this.dish_image}}" alt="">
               <p>{{this.dish_name}} <span class="score-span">With {{this.dish_points}} Points</span></p>
