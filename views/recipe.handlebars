@@ -54,10 +54,10 @@
             <a href="/finishedMeal" class="upload-btn">Upload Your Dish</a>
         </div> --}}
         <div class="main-section">
-            {{#each recipe}}
+            {{#each recipe.data.data}}
             <div class="left-screen">
                 <div class="top">
-                    <h1>Harrisa Roasted Carrots</h1>
+                    <h1>{{this.dish_name}}</h1>
                     <div class="cook-times">
                         <img src="/images/Vector.png" alt="clock">
                         <div class="cook-time">
@@ -73,9 +73,7 @@
                             <p class="des">TOTAL</p>
                         </div>
                     </div>
-                    <p class="dish-des">These spicy carrots are a delicious, flavor-packed side dish to serve for
-                        dinner. The rainbow
-                        carrots are tossed in a homemade harissa marinade and baked until they’re crispy and tender.</p>
+
                 </div>
 
                 <div class="bottom">

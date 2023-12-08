@@ -41,8 +41,8 @@ export default function IngredientsRoutes(ingredientsService) {
       let id = req.params.id;
       
       let recipeData = await axios.get(`https://recipes-api-8b36.onrender.com/api/recipes/${id}`)
-      console.log(recipeData.data.data);
-      res.render('recipe',{
+      console.log(recipeData.data);
+      res.render(`recipe`,{
         recipe: recipeData,
         currentUser:""
       });
