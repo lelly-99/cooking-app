@@ -37,7 +37,10 @@ app.use(flash());
 
 
 // Setup the Handlebars view engine
-app.engine('handlebars', engine());
+app.engine('handlebars', engine({
+  // Define a custom Handlebars helper
+  helpers: handlebarsHelpers
+}));
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
