@@ -71,6 +71,20 @@ nav{
     object-fit: cover;
     height: 28px;
 }
+.text-green{
+    color: #199C04;
+}
+.user img{
+    object-fit: cover;
+    height: 28px;
+    
+    border-radius: 50%;
+}
+.user-info img{
+    object-fit: cover;
+    max-height: 158px;
+    border-radius: 50%;
+}
 
 .user p{
     color: #000;
