@@ -73,9 +73,17 @@ export default function IngredientsRoutes(ingredientsService) {
 
 
 
-    function getLearderboard(req, res){
+    async function getLearderboard(req, res){
+      let leaderboard = await axios.get("https://recipes-api-8b36.onrender.com/api/leaderboardData")
+      let leaderboardData = leaderboard.data
+      const [firstEntry, ...restEntries] = leaderboardData.data;
+
+      
       res.render('learderboard',{
-        currentUser:""
+        currentUser:"",
+        firstEntry:firstEntry,
+        restEntries:restEntries
+
       });
     }
     
