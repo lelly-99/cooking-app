@@ -34,7 +34,7 @@ app.use(flash());
 
 
 
-
+const handlebarsHelpers = helpers()
 
 // Setup the Handlebars view engine
 app.engine('handlebars', engine({
