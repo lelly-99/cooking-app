@@ -16,21 +16,61 @@
                 <p>Welcome to food scan</p>
                 <h3>Login</h3>
             </div>
-            <div class="form-grp">
-                <div class="input">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" required>
+            <form id="loginForm" action="#" method="post">
+                <div class="form-grp">
+                    <div class="input">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" required>
+                    </div>
+                    <div class="input">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" required>            
+                    </div>
                 </div>
-                <div class="input">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" required>            
+                <div class="links">
+                    <button type="submit">Login</button>
+                    <a href="/register">Not registered? Sign up</a>
                 </div>
-            </div>
-            <div class="links">
-                <button>Login</button>
-                <a href="#">Not registered? Sign in</a>
-            </div>
+            </form>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.getElementById('loginForm');
+
+            loginForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const email = document.querySelector('[name="username"]').value;
+            const password = document.querySelector('[name="password"]').value;
+
+            try {
+                const response = await fetch('https://recipes-api-8b36.onrender.com/api/logIn', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                }),
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    window.location.href = '/';
+                } else {
+                alert('Error logging in: ' + data.error);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An unexpected error occurred');
+            }
+            });
+        });
+    </script>
+
 </body>
 </html>

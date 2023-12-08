@@ -65,6 +65,10 @@ body{
     gap: 8px;
 }
 
+.links{
+    margin-top: 30px;
+}
+
 .input label{
     color: #000;
     font-family: 'Poppins';
@@ -81,6 +85,8 @@ body{
     width: 300px;
     height: 37px;
     flex-shrink: 0;
+    padding: 5px;
+    padding-left: 10px;
 }
 
 .links button{
