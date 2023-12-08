@@ -29,8 +29,8 @@
         <div class="main-section">
             <div class="left-side">
                 <div class="user-info">
-                    <img src="/images/Ellipse 2.png" alt="Kristin">
-                    <h6>Kristin Watson</h6>
+                    <img src="/images/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="">
+                    <h6>{{capitalize firstEntry.user_name}}</h6>
                 </div>
                 <div class="user-stats">
                     <div class="stat">
@@ -39,11 +39,11 @@
                     </div>
                     <div class="stat">
                         <p class="stat-label">Score</p>
-                        <p class="val">800</p>
+                        <p class="val">{{firstEntry.points}}</p>
                     </div>
                     <div class="stat">
                         <p class="stat-label">Dishes</p>
-                        <p class="val">54</p>
+                        <p class="val">{{firstEntry.dishes_cooked}}</p>
                     </div>
                 </div>
                 <div class="lead">
@@ -55,30 +55,16 @@
             <div class="right-side">
                 <h1>Leaderboard</h1>
                 <div class="users">
+                    {{#each restEntries}}
                     <div class="other-users">
-                        <p>2</p>
-                        <img src="/images/Ellipse 1 (1).png" alt="">
-                        <p>Name Surname</p>
-                        <p>500</p>
+                        <p>{{addOne @index}}</p>
+                        <img src="/images/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="">
+                        <p>{{capitalize user_name}}</p>
+                        <p><span class="text-green">Dishes</span>: {{dishes_cooked}}</p>
+                        <p ><span class="text-green">Score</span> {{points}}</p>
                     </div>
-                    <div class="other-users">
-                        <p>2</p>
-                        <img src="/images/Ellipse 1 (1).png" alt="">
-                        <p>Name Surname</p>
-                        <p>500</p>
-                    </div>
-                    <div class="other-users">
-                        <p>2</p>
-                        <img src="/images/Ellipse 1 (1).png" alt="">
-                        <p>Name Surname</p>
-                        <p>500</p>
-                    </div>
-                    <div class="other-users">
-                        <p>2</p>
-                        <img src="/images/Ellipse 1 (1).png" alt="">
-                        <p>Name Surname</p>
-                        <p>500</p>
-                    </div>
+                    {{/each}}
+                    
                 </div>
             </div>
         </div>  
