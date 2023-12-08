@@ -29,10 +29,21 @@ header nav {
 
 .navbar-brand {
     color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .navbar-brand span {
-    color: rgb(25,156,4,1);
+    color: #199C04;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Poppins';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .nav-item a {
@@ -56,11 +67,13 @@ main{
 
 .home-main h1 {
     margin-top: 1.2rem;
-    font-family: PT Serif Caption;
-    line-height: auto;
+    font-family: 'PT Serif Caption';
     font-size: 1.3rem;
     width: 100%;
     text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .home-main p {
@@ -80,7 +93,7 @@ main{
     background-color: #1B9D05;
     border-radius: 20px;
     color: #FFF;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-size: 1.3rem;
     font-style: normal;
     font-weight: 600;
@@ -101,12 +114,17 @@ main{
     display: none;
 }
 @media(min-width:760px){
+    .navbar-brand{
+        font-size: 30px;
+    }
+
     header {
         background-color: #FFFFFF;
     }
     
     header nav {
         background-color: #FFFFFF;
+        height: 80px;
     }
     
     .home-body {
@@ -118,18 +136,46 @@ main{
         font-size: 1.5rem;
     }
     .home-main {
-        align-items: start;
-        justify-content: space-around;
-        width: 50%;
+        margin-top: 100px;
+    }
+
+    .main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 100px;
     }
     
     .home-main h1 {
-        margin-top: 2rem;
-        font-size: 2rem;
-        text-align: start;
+        color: #000;
+        font-family: 'PT Serif Caption';
+        font-size: 3.2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 90%;
+        text-align: left;
     }
-    .home-main img {
+
+    /* .home-main img {
         display: none;
+    } */
+    
+    .home-button{
+        background-color: green;
+        width: 230px;
+        height: 50px;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #FFF;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 10px 40px 10px 40px;
+        align-self: flex-start;
+        margin-left: 30px;
     }
     
     .home-main p {
@@ -139,10 +185,11 @@ main{
     }
     .largeIMG{
         display: grid;
-        width: 300px; 
-        height: auto; 
+        width: 320px; 
+        height: 320px; 
         object-fit: cover; 
         align-self: center;
+        justify-self: center;
         margin-left: auto;
         margin-right: auto;
     }
@@ -160,36 +207,50 @@ main{
 }
 @media(min-width:960px){
    
-    .home-main h1 {
+    /* .home-main h1 {
         margin-top: 2rem;
-        font-size: 3rem;
+        font-size: 1.5rem;
         text-align: start;
-    }
+    } */
     .home-main img {
         display: none;
     }
     
     .home-main p {
         text-align: start;
-        margin: 20px 0px;
-        font-size: 1.3rem;
+        margin: 20px 30px;
+        color: #7E7C7C;
+        font-family: 'Poppins';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 100;
+        line-height: normal;
     }
     .friendsparagraph{
-        margin-top: 10px;
+        margin-top: -60px;
+        margin-left: 250px;
+        margin-bottom: 40px;
     }
     
     .friendsparagraph h2{
-        font-size: 1.6rem;
-        width: 300px;
-        padding: 4px;
+        color: #000;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: 'Poppins';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 16px;
+        text-align: left;
     }
+
 }
 @media(min-width:1200px){
    
-    .home-main h1 {
+    /* .home-main h1 {
         margin-top: 2rem;
         font-size: 4rem;
         text-align: start;
-    }
+    } */
 }
 
