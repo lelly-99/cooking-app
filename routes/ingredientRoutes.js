@@ -41,9 +41,11 @@ export default function IngredientsRoutes(ingredientsService) {
 
 
     async function dishList(req,res){
-      let dishes = await axios.get("https://recipes-api-8b36.onrender.com/api/dishes/")
+      let dishes = await axios.get("https://recipes-api-8b36.onrender.com/api/dishes/:dish_name")
       let dishesData = dishes.data
-      res.render('dishList',{
+      let dishFor = req.params.dish_name;
+      console.log(dishesData)
+      res.render(`dishList/${dishFor}`,{
         dishes:dishesData,
         currentUser:""
       })

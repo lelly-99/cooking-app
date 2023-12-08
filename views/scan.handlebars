@@ -7,6 +7,7 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <!-- Link Dom -->
   <script src="/dom/nav-collapse.js" defer></script>
+  <script src="/dom/model.js" defer></script>
   <!-- GENERAL STYLE FOR ALL PAGES -->
   <link rel="stylesheet" href="/css/style.css" />
   <!-- STYLE FOR ALL SCAN PAGE -->
@@ -94,11 +95,25 @@
         // run the webcam image through the image model
         async function predict() {
           // predict can take in an image, video or canvas html element
-          const prediction = await model.predict(webcam.canvas);
-          for (let i = 0; i < maxPredictions; i++) {
+          const predictions = await model.predict(webcam.canvas);
+
+          /*for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
               prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
+          }*/
+
+          //oats
+          const oats = predictions[0];
+
+          if (oats.probability > 0.95) {
+            oatMealText = "Looks like you photographed OATS, follow the link below for more."
+            linkToRecipes = "See dishes you can prepare with OATS"
+            recognizedText.innerHTML = oatMealText
+            linkingText.innerHTML = linkToRecipes;
+
+            modelOn.style.display = 'none';
+            linkingText.href = '/dishList/Oat';
           }
         }
 
@@ -109,10 +124,9 @@
       <!-- <button class="scan start-btn">Start</button> -->
       <div class="start-btn-wrapper"><button class="scan start-btn" type="button" onclick="init()">Start</button></div>
       <div class="scan text-link-wrapper">
-        <p class="scan igredient-text">Looks like what you scanned is a
-          carrot, follow the link below for more.</p>
-        <a class="scan anchor" href="/dishList">see what you can do with
-          carrot</a>
+        <p class="scan igredient-text"></p>
+        <a class="scan anchor" href="/dishList"></a>
+        <p class="model-on">YOUR PHOTOGRAPHED INGREDIENT WILL APPEAR HERE</p>
       </div>
     </div>
   </main>

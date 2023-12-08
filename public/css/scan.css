@@ -149,7 +149,15 @@ a:link.scan {
 .user-desktop{
   display:none;
 }
-
+.scan.anchor{
+  text-decoration: underline;
+}
+.span-text,
+.span-link,.model-on{
+  font-weight:700;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
 /* ----------------- MOBILE FIRST  -----------------*/
 @media(min-width:768px){
   .scan.container{

@@ -81,7 +81,7 @@ app.get("/recipes",ingredientsRoutes.recipes);
 
 
 //list of recipes Routes (dishList)
-app.get("/dishList",ingredientsRoutes.dishList);
+app.get("/dishList/:dish_name",ingredientsRoutes.dishList);
 
 
 
