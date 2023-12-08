@@ -22,18 +22,27 @@ export default function IngredientsRoutes(ingredientsService) {
 
 
 
-    function recipes(req, res){
-      res.render('recipe',{
+    async function recipes(req, res){
+      let recipeFor = req.params.recipe_dish_name;
+      let recipeData = await axios.get(`https://recipes-api-8b36.onrender.com/api/recipe/${recipeFor}`)
+      recipeData=recipeData.data
+      console.log(recipeData)
+      res.render('dishList',{
+        recipe: recipeData,
         currentUser:""
       });
     }
 
 
 
+    
 
-
-    function makeFood(req, res){
+    async function makeFood(req, res){
+      let id = req.params.id;
+      let recipeData = await axios.get(`https://recipes-api-8b36.onrender.com/api/recipes/${id}`)
+      console.log(recipeData);
       res.render('recipe',{
+        recipe: recipeData,
         currentUser:""
       });
     }
@@ -41,11 +50,10 @@ export default function IngredientsRoutes(ingredientsService) {
 
 
     async function dishList(req,res){
-      let dishes = await axios.get("https://recipes-api-8b36.onrender.com/api/dishes/:dish_name")
-      let dishesData = dishes.data
       let dishFor = req.params.dish_name;
-      console.log(dishesData)
-      res.render(`dishList/${dishFor}`,{
+      let dishes = await axios.get(`https://recipes-api-8b36.onrender.com/api/dishes/${dishFor}`)
+      let dishesData = dishes.data
+      res.render(`dishList`,{
         dishes:dishesData,
         currentUser:""
       })
@@ -76,7 +84,7 @@ export default function IngredientsRoutes(ingredientsService) {
     return {
       root,
       scan,
-      recipes,
+      // recipes,
       makeFood,
       showFood,
       getLearderboard,

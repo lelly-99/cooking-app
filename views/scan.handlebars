@@ -106,21 +106,17 @@
 
           //oats
           const oats = predictions[0];
-
           if (oats.probability > 0.95) {
             oatMealText = "Looks like you photographed OATS, follow the link below for more."
             linkToRecipes = "See dishes you can prepare with OATS"
             recognizedText.innerHTML = oatMealText
             linkingText.innerHTML = linkToRecipes;
-
             modelOn.style.display = 'none';
             linkingText.href = '/dishList/Oat';
           }
         }
 
       </script>
-
-
       <!-- ********************** webcam for the model **************************** -->
       <!-- <button class="scan start-btn">Start</button> -->
       <div class="start-btn-wrapper"><button class="scan start-btn" type="button" onclick="init()">Start</button></div>

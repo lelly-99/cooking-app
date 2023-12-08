@@ -1,12 +1,17 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/recipe.css">
+    <link rel="stylesheet" href="/css/recipe-redo.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=PT Serif Caption' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
     <title>Cooking || Recipes</title>
 </head>
+
 <body>
     <div class="container">
         <nav>
@@ -24,7 +29,32 @@
             </div>
         </nav>
 
+        {{!-- <div class="recipe container">
+            {{#each recipe}}
+            <div>
+                <h1>{{this.dish_name}}</h1>
+                <img class="recipe-img" src="{{this.dishimage}}" alt="">
+                <div class="times">
+                    <p class=""><span> {{this.prep_time}} PREP TIME</span> </p>
+                    <p class=""><span> {{this.cook_time}} COOK TIME</span></p>
+                    <p class="">{{this.total_time}}<span> TOTAL TIME</span></p>
+                </div>
+                <div class="flex">
+                    <div class="flex1">
+                        <h5>Instructions</h5>
+                        <p class="">{{this.instructions}}</p>
+                    </div>
+                    <div class="flex2">
+                        <h5>Ingredients</h5>
+                        <p class="">{{this.ingredients}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            <a href="/finishedMeal" class="upload-btn">Upload Your Dish</a>
+        </div> --}}
         <div class="main-section">
+            {{#each recipe}}
             <div class="left-screen">
                 <div class="top">
                     <h1>Harrisa Roasted Carrots</h1>
@@ -43,42 +73,33 @@
                             <p class="des">TOTAL</p>
                         </div>
                     </div>
-                    <p class="dish-des">These spicy carrots are a delicious, flavor-packed side dish to serve for dinner. The rainbow
+                    <p class="dish-des">These spicy carrots are a delicious, flavor-packed side dish to serve for
+                        dinner. The rainbow
                         carrots are tossed in a homemade harissa marinade and baked until they’re crispy and tender.</p>
                 </div>
 
                 <div class="bottom">
                     <h5>Instructions</h5>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                        es</p>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                        ma</p>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                        ma</p>
-                    <a href="/meal" class="upload-btn">
-                        Upload Your Dish
-                    </a>
+                    <p>{{this.instructions}}</p>
+                    <a href="/finishedMeal" class="upload-btn">Upload Your Dish</a>
                 </div>
             </div>
 
             <div class="right-screen">
                 <div class="top">
-                    <img src="/images/harissa-roasted-carrots 1.png" alt="">
+                    <img src="{{this.image}}" alt="">
                 </div>
 
                 <div class="bottom">
                     <h5>Ingredients</h5>
                     <ul>
-                        <li><span>150g</span> Lorem ipsum dolor sit, amet consectetur</li>
-                        <li><span>150g</span> Lorem ipsum dolor sit, amet consectetur</li>
-                        <li><span>150g</span> Lorem ipsum dolor sit, amet consectetur</li>
-                        <li><span>150g</span> Lorem ipsum dolor sit, amet consectetur</li>
-                        <li><span>150g</span> Lorem ipsum dolor sit, amet consectetur</li>
+                        <li>{{this.ingredients}}</li>
                     </ul>
                 </div>
             </div>
+            {{/each}}
+
         </div>
-    </div>
 </body>
 
 </html>

@@ -1,0 +1,21 @@
+.recipe.container{
+  max-width:1200px;
+  margin:0 auto;
+}
+.recipe-img{
+  width:100%;
+}
+.flex{
+  display:flex;
+  gap:20px;
+  margin-bottom:20px;
+}
+.flex1{
+  flex: 1 1 300px;
+}
+.flex2{
+  flex: 1 1 200px;
+}
+.times{
+  margin:20px;
+}

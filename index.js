@@ -74,7 +74,7 @@ app.get("/scan",ingredientsRoutes.scan);
 
 
 //list of recipes Routes (dishList)
-app.get("/recipes",ingredientsRoutes.recipes);
+app.get("/recipes/:recipe_dish_name",ingredientsRoutes.recipes);
 
 
 
